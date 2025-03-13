@@ -44,3 +44,5 @@ next-env.d.ts
 components/component-*
 components/showcases/
 components/layout/
+
+.vercel
