@@ -1,0 +1,46 @@
+# Ignore the app (website) directory
+/app/
+
+# Ignore Next.js build files
+/.next/
+/out/
+
+/build
+
+# Ignore dependencies
+/node_modules
+
+# Ignore debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Ignore env files
+.env*
+
+# Ignore Vercel deployment folder
+.vercel
+
+# Ignore TypeScript build info
+*.tsbuildinfo
+next-env.d.ts
+
+# Ignore public assets that are not necessary
+/public/fonts/
+/public/images/
+/public/*.jpg
+/public/*.png
+/public/*.svg
+/public/*.ico
+
+# Ignore styles if they are not part of the UI library
+/styles/
+
+# Include only the UI components
+!components/ui/
+
+# Ignore other component-related files that are not necessary
+components/component-*
+components/showcases/
+components/layout/
