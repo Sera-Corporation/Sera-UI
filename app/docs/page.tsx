@@ -34,7 +34,7 @@ export default function DocsPage() {
             <CardDescription>Learn how to use SeraUI components in your project.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-5">
               Follow our step-by-step guide to get up and running with SeraUI in minutes.
             </p>
           </CardContent>
@@ -76,7 +76,7 @@ export default function DocsPage() {
             <CardDescription>Learn how to customize and extend SeraUI components.</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-5">
               Guides on theming, styling, and creating your own custom components.
             </p>
           </CardContent>
@@ -90,41 +90,9 @@ export default function DocsPage() {
           </CardFooter>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <Github className="h-6 w-6 text-primary" />
-            <CardTitle className="mt-2">Contribute</CardTitle>
-            <CardDescription>Learn how to contribute to the SeraUI project.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Guidelines for contributing code, reporting issues, and submitting feature requests.
-            </p>
-          </CardContent>
-          <CardFooter>
-            <Button asChild className="w-full">
-              <Link href="/docs/contribute">
-                Contribute
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </CardFooter>
-        </Card>
       </div>
 
       <div className="mt-12 space-y-8">
-        <h2 className="text-2xl font-bold tracking-tight">Usage</h2>
-        <div className="rounded-md bg-muted p-4">
-          <pre className="text-sm">
-            <code>{`<!-- Just copy and paste the Tailwind CSS code into your project -->
-<div className="flex items-center justify-center gap-4">
-  <button className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
-    Button
-  </button>
-</div>`}</code>
-          </pre>
-        </div>
-
         <h2 className="text-2xl font-bold tracking-tight">Basic Usage</h2>
         <div className="rounded-md bg-muted p-4">
           <pre className="text-sm">

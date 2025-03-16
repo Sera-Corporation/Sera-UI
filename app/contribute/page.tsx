@@ -8,7 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 export const metadata: Metadata = {
   title: "Contribute - SeraUI",
-  description: "Learn how to contribute to the SeraUI project.",
+  description: "Learn how to provide feedback on the SeraUI project.",
 }
 
 export default function ContributePage() {
@@ -22,22 +22,21 @@ export default function ContributePage() {
           </Link>
         </Button>
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Contribute</h1>
-          <p className="text-muted-foreground">Learn how to contribute to the SeraUI project.</p>
+          <h1 className="text-3xl font-bold tracking-tight">Feedback</h1>
+          <p className="text-muted-foreground">Learn how to provide feedback on the SeraUI project.</p>
         </div>
       </div>
 
       <div className="space-y-8">
         <p className="text-lg">
-          SeraUI is an open-source project, and we welcome contributions from the community. Whether you're fixing a
-          bug, adding a feature, or improving documentation, your help is appreciated.
+          SeraUI is a proprietary UI library. As a valued customer, your feedback helps us improve the library and make it more useful for everyone.
         </p>
 
         <div className="flex justify-center">
           <Button size="lg" asChild>
-            <a href="https://github.com/yourusername/seraui" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/bigyanadk07" target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-5 w-5" />
-              View on GitHub
+              Follow Us on GitHub
             </a>
           </Button>
         </div>
@@ -49,15 +48,15 @@ export default function ContributePage() {
               <CardDescription>Found a bug or have a feature request?</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Help us improve by reporting issues on GitHub. Please include detailed steps to reproduce the issue and
-                any relevant information.
+              <p className="text-sm text-muted-foreground mb-5">
+                Help us improve by reporting issues through our customer feedback system. Please include detailed steps to reproduce 
+                the issue and any relevant information.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" asChild className="w-full">
-                <a href="https://github.com/yourusername/seraui/issues/new" target="_blank" rel="noopener noreferrer">
-                  Open an Issue
+                <a href="/feedback" rel="noopener noreferrer">
+                  Submit Feedback
                 </a>
               </Button>
             </CardFooter>
@@ -65,19 +64,18 @@ export default function ContributePage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Submit Pull Requests</CardTitle>
-              <CardDescription>Want to contribute code to SeraUI?</CardDescription>
+              <CardTitle>Request Features</CardTitle>
+              <CardDescription>Have ideas for improving SeraUI?</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                We welcome pull requests for bug fixes, new features, and improvements. Please follow our contribution
-                guidelines.
+              <p className="text-sm text-muted-foreground mb-10">
+                We're always looking to enhance SeraUI. Let us know what features would make your development experience better.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" asChild className="w-full">
-                <a href="https://github.com/yourusername/seraui/pulls" target="_blank" rel="noopener noreferrer">
-                  Submit a PR
+                <a href="/feature-request" rel="noopener noreferrer">
+                  Request Feature
                 </a>
               </Button>
             </CardFooter>
@@ -85,23 +83,18 @@ export default function ContributePage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Improve Documentation</CardTitle>
+              <CardTitle>Documentation Feedback</CardTitle>
               <CardDescription>Help us make our documentation better.</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Good documentation is crucial for any project. Help us improve our docs by fixing typos, adding
-                examples, or clarifying instructions.
+              <p className="text-sm text-muted-foreground mb-5">
+                Good documentation is crucial. Let us know if you find any issues or have suggestions to improve our documentation.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" asChild className="w-full">
-                <a
-                  href="https://github.com/yourusername/seraui/tree/main/docs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Docs Source
+                <a href="/docs/feedback" rel="noopener noreferrer">
+                  Give Feedback
                 </a>
               </Button>
             </CardFooter>
@@ -109,60 +102,56 @@ export default function ContributePage() {
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">Contribution Guidelines</h2>
+          <h2 className="text-2xl font-bold tracking-tight">Usage Guidelines</h2>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger>Code of Conduct</AccordionTrigger>
+              <AccordionTrigger>Terms of Use</AccordionTrigger>
               <AccordionContent>
                 <p className="text-sm text-muted-foreground">
-                  We expect all contributors to follow our Code of Conduct. Be respectful, inclusive, and considerate in
-                  all interactions.
+                  SeraUI is a proprietary library. Please review our license agreement for detailed terms of use. 
+                  Unauthorized redistribution or modification is not permitted.
                 </p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>Development Setup</AccordionTrigger>
+              <AccordionTrigger>Getting Started</AccordionTrigger>
               <AccordionContent>
                 <ol className="list-decimal space-y-2 pl-5 text-sm text-muted-foreground">
-                  <li>Fork the repository on GitHub.</li>
+                  <li>Sign up for a SeraUI account.</li>
                   <li>
-                    Clone your fork: <code>git clone https://github.com/yourusername/seraui.git</code>
+                    Install the package: <code>npm install @seraui/components</code>
                   </li>
                   <li>
-                    Install dependencies: <code>npm install</code>
+                    Add your API key to your environment variables.
                   </li>
                   <li>
-                    Create a new branch: <code>git checkout -b feature/your-feature-name</code>
+                    Import and use components in your project.
                   </li>
-                  <li>Make your changes and commit them.</li>
-                  <li>
-                    Push to your fork: <code>git push origin feature/your-feature-name</code>
-                  </li>
-                  <li>Create a pull request on GitHub.</li>
+                  <li>Refer to our documentation for detailed usage instructions.</li>
                 </ol>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger>Coding Standards</AccordionTrigger>
+              <AccordionTrigger>Best Practices</AccordionTrigger>
               <AccordionContent>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-                  <li>Follow the existing code style and formatting.</li>
-                  <li>Write clean, readable, and maintainable code.</li>
-                  <li>Use TypeScript for type safety.</li>
-                  <li>Write tests for your code when applicable.</li>
-                  <li>Document your code with comments when necessary.</li>
+                  <li>Follow our implementation guidelines for optimal performance.</li>
+                  <li>Use TypeScript for type safety with our components.</li>
+                  <li>Check our documentation for recommended usage patterns.</li>
+                  <li>Test your implementations thoroughly.</li>
+                  <li>Keep your SeraUI package updated to the latest version.</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
-              <AccordionTrigger>Pull Request Process</AccordionTrigger>
+              <AccordionTrigger>Feedback Process</AccordionTrigger>
               <AccordionContent>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-                  <li>Ensure your code passes all tests and linting.</li>
-                  <li>Update documentation if necessary.</li>
-                  <li>Add a clear description of your changes in the PR.</li>
-                  <li>Reference any related issues in your PR description.</li>
-                  <li>Be responsive to feedback and make requested changes.</li>
+                  <li>Use our dedicated feedback channels for suggestions or issues.</li>
+                  <li>Include screenshots or videos if applicable.</li>
+                  <li>Provide detailed reproduction steps for any bugs.</li>
+                  <li>Reference your project ID in communications.</li>
+                  <li>Our team reviews all feedback and prioritizes improvements accordingly.</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
@@ -170,80 +159,64 @@ export default function ContributePage() {
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">Adding New Components</h2>
+          <h2 className="text-2xl font-bold tracking-tight">Requesting New Components</h2>
           <p>
-            We encourage contributions of new components to expand the SeraUI library. Here's how to add a new
-            component:
+            We continuously expand the SeraUI library based on customer needs. Here's how to request new components:
           </p>
           <ol className="list-decimal space-y-2 pl-5">
-            <li>Check if the component already exists or if there's an open issue/PR for it.</li>
-            <li>Create a new issue to discuss the component if it's a significant addition.</li>
-            <li>Follow our component structure and naming conventions.</li>
-            <li>Implement the component with TypeScript and TailwindCSS.</li>
-            <li>Write documentation and usage examples.</li>
-            <li>Add tests for the component.</li>
-            <li>Submit a pull request with your new component.</li>
+            <li>Check if the component already exists in our documentation.</li>
+            <li>Submit a feature request through our customer portal.</li>
+            <li>Describe the component's purpose and functionality.</li>
+            <li>Include any design references or examples if available.</li>
+            <li>Explain your use case to help us understand the need.</li>
+            <li>Our product team will review all requests and prioritize development.</li>
+            <li>You'll be notified when components inspired by your request are released.</li>
           </ol>
         </div>
 
         <div className="rounded-md border p-6">
-          <h2 className="text-xl font-bold tracking-tight">Component Structure</h2>
-          <p className="mt-2 text-sm text-muted-foreground">When creating a new component, follow this structure:</p>
+          <h2 className="text-xl font-bold tracking-tight">Component Usage Example</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Here's how to use a typical SeraUI component:</p>
           <div className="mt-4 rounded-md bg-muted p-4">
             <pre className="text-sm">
-              <code>{`// components/button/button.tsx
-import * as React from 'react'
-import { cn } from '../../lib/utils'
+              <code>{`// In your React component
+import React from 'react'
+import { Button } from '@seraui/components'
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'secondary' | 'destructive' | 'outline' | 'ghost' | 'link'
-  size?: 'default' | 'sm' | 'lg' | 'icon'
-}
-
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
-    return (
-      <button
-        className={cn(
-          // Base styles
-          'inline-flex items-center justify-center rounded-md font-medium transition-colors',
-          // Variant styles
-          variant === 'default' && 'bg-primary text-primary-foreground hover:bg-primary/90',
-          // Size styles
-          size === 'default' && 'h-10 px-4 py-2',
-          // Custom className
-          className
-        )}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = 'Button'
-
-// components/button/index.ts
-export * from './button'`}</code>
+export function MyComponent() {
+  return (
+    <div>
+      <h1>My Application</h1>
+      <Button
+        variant="default"
+        size="default"
+        onClick={() => alert('Button clicked!')}
+      >
+        Click Me
+      </Button>
+    </div>
+  )
+}`}</code>
             </pre>
           </div>
         </div>
 
         <div className="space-y-4">
           <h2 className="text-2xl font-bold tracking-tight">Community</h2>
-          <p>Join our community to discuss SeraUI, get help, and connect with other contributors:</p>
+          <p>Join our customer community to discuss SeraUI, get help, and connect with other users:</p>
           <div className="flex flex-wrap gap-4">
             <Button variant="outline" asChild>
-              <a href="https://github.com/yourusername/seraui/discussions" target="_blank" rel="noopener noreferrer">
-                GitHub Discussions
+              <a href="https://forum.seraui.com" target="_blank" rel="noopener noreferrer">
+                SeraUI Forum
               </a>
             </Button>
             <Button variant="outline" asChild>
-              <a href="https://discord.gg/seraui" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.gg/BNa2V7YQ" target="_blank" rel="noopener noreferrer">
                 Discord
               </a>
             </Button>
             <Button variant="outline" asChild>
-              <a href="https://twitter.com/seraui" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/SeraUICorp" target="_blank" rel="noopener noreferrer">
                 Twitter
               </a>
             </Button>
@@ -253,4 +226,3 @@ export * from './button'`}</code>
     </div>
   )
 }
-

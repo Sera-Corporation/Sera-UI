@@ -87,15 +87,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/contribute"
-                  className="text-muted-foreground hover:text-foreground flex items-center gap-1"
-                >
-                  <Code className="h-3 w-3" /> Contribute
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://github.com/Sera-Corporation/Sera-UI.git/discussions"
+                  href="https://github.com/bigyanadk07"
                   target="_blank"
                   rel="noreferrer"
                   className="text-muted-foreground hover:text-foreground flex items-center gap-1"
@@ -105,7 +97,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://discord.gg/seraui"
+                  href="https://discord.gg/BNa2V7YQ"
                   target="_blank"
                   rel="noreferrer"
                   className="text-muted-foreground hover:text-foreground flex items-center gap-1"
@@ -141,6 +133,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/customer-portal" className="text-muted-foreground hover:text-foreground flex items-center gap-1">
+                  <ExternalLink className="h-3 w-3" /> Customer Portal
+                </Link>
+              </li>
+              <li>
                 <Link
                   href="https://github.com/Sera-Corporation/Sera-UI.git/blob/main/LICENSE"
                   target="_blank"
@@ -161,27 +158,9 @@ export function Footer() {
             <a href="https://github.com/bigyanadk07" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4">
               Bigyan Adhikari
             </a>
-            . The source code is available on{" "}
-            <a
-              href="https://github.com/Sera-Corporation/Sera-UI.git"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              GitHub
-            </a>
-            .
+            
           </p>
           <div className="flex items-center">
-            <Link
-              href="https://github.com/Sera-Corporation/Sera-UI.git"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1 text-sm font-medium"
-            >
-              <Star className="h-4 w-4" />
-              <span>Star on GitHub</span>
-            </Link>
           </div>
         </div>
       </div>
