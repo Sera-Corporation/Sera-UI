@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ContributePage() {
   return (
-    <div className="container py-10">
+    <div className="container max-w-6xl py-10">
       <div className="flex items-center gap-4 pb-8">
         <Button variant="outline" size="icon" asChild>
           <Link href="/">
@@ -28,12 +28,12 @@ export default function ContributePage() {
       </div>
 
       <div className="space-y-8">
-        <p className="text-lg">
+        <p className="text-lg max-w-3xl">
           SeraUI is a proprietary UI library. As a valued customer, your feedback helps us improve the library and make it more useful for everyone.
         </p>
 
-        <div className="flex justify-center">
-          <Button size="lg" asChild>
+        <div className="flex justify-center mb-12">
+          <Button size="lg" className="shadow-md hover:shadow-lg transition-shadow" asChild>
             <a href="https://github.com/bigyanadk07" target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-5 w-5" />
               Follow Us on GitHub
@@ -42,13 +42,13 @@ export default function ContributePage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card>
+          <Card className="border-2 hover:shadow-md transition-all">
             <CardHeader>
               <CardTitle>Report Issues</CardTitle>
               <CardDescription>Found a bug or have a feature request?</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-5">
+              <p className="text-sm text-muted-foreground">
                 Help us improve by reporting issues through our customer feedback system. Please include detailed steps to reproduce 
                 the issue and any relevant information.
               </p>
@@ -62,13 +62,13 @@ export default function ContributePage() {
             </CardFooter>
           </Card>
 
-          <Card>
+          <Card className="border-2 hover:shadow-md transition-all">
             <CardHeader>
               <CardTitle>Request Features</CardTitle>
               <CardDescription>Have ideas for improving SeraUI?</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-10">
+              <p className="text-sm text-muted-foreground">
                 We're always looking to enhance SeraUI. Let us know what features would make your development experience better.
               </p>
             </CardContent>
@@ -81,13 +81,13 @@ export default function ContributePage() {
             </CardFooter>
           </Card>
 
-          <Card>
+          <Card className="border-2 hover:shadow-md transition-all">
             <CardHeader>
               <CardTitle>Documentation Feedback</CardTitle>
               <CardDescription>Help us make our documentation better.</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-5">
+              <p className="text-sm text-muted-foreground">
                 Good documentation is crucial. Let us know if you find any issues or have suggestions to improve our documentation.
               </p>
             </CardContent>
@@ -101,7 +101,7 @@ export default function ContributePage() {
           </Card>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 mt-12">
           <h2 className="text-2xl font-bold tracking-tight">Usage Guidelines</h2>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
@@ -158,7 +158,7 @@ export default function ContributePage() {
           </Accordion>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 bg-muted/50 p-6 rounded-lg mt-10">
           <h2 className="text-2xl font-bold tracking-tight">Requesting New Components</h2>
           <p>
             We continuously expand the SeraUI library based on customer needs. Here's how to request new components:
@@ -174,11 +174,11 @@ export default function ContributePage() {
           </ol>
         </div>
 
-        <div className="rounded-md border p-6">
+        <div className="rounded-lg border-2 p-6 bg-card shadow-sm mt-10">
           <h2 className="text-xl font-bold tracking-tight">Component Usage Example</h2>
           <p className="mt-2 text-sm text-muted-foreground">Here's how to use a typical SeraUI component:</p>
           <div className="mt-4 rounded-md bg-muted p-4">
-            <pre className="text-sm">
+            <pre className="text-sm overflow-x-auto whitespace-pre-wrap break-words">
               <code>{`// In your React component
 import React from 'react'
 import { Button } from '@seraui/components'
@@ -201,21 +201,21 @@ export function MyComponent() {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 mt-12 bg-gradient-to-br from-muted/20 to-muted/40 p-8 rounded-xl">
           <h2 className="text-2xl font-bold tracking-tight">Community</h2>
           <p>Join our customer community to discuss SeraUI, get help, and connect with other users:</p>
-          <div className="flex flex-wrap gap-4">
-            <Button variant="outline" asChild>
+          <div className="flex flex-wrap gap-4 mt-6">
+            <Button variant="outline" className="bg-card hover:bg-background transition-colors" asChild>
               <a href="https://forum.seraui.com" target="_blank" rel="noopener noreferrer">
                 SeraUI Forum
               </a>
             </Button>
-            <Button variant="outline" asChild>
+            <Button variant="outline" className="bg-card hover:bg-background transition-colors" asChild>
               <a href="https://discord.gg/BNa2V7YQ" target="_blank" rel="noopener noreferrer">
                 Discord
               </a>
             </Button>
-            <Button variant="outline" asChild>
+            <Button variant="outline" className="bg-card hover:bg-background transition-colors" asChild>
               <a href="https://x.com/SeraUICorp" target="_blank" rel="noopener noreferrer">
                 Twitter
               </a>
