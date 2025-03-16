@@ -24,6 +24,13 @@ export function ThemeToggle() {
     setMounted(true)
   }, [])
 
+  // Use this function to handle theme changes
+  const handleThemeChange = (newTheme: string) => {
+    // Only use the setTheme function from next-themes
+    // This will handle the localStorage and DOM updates properly
+    setTheme(newTheme)
+  }
+
   if (!mounted) {
     return (
       <Button variant="outline" size="icon">
@@ -60,17 +67,17 @@ export function ThemeToggle() {
           </TooltipContent>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Standard Themes</DropdownMenuLabel>
-            <DropdownMenuItem onClick={() => setTheme("light")}>
+            <DropdownMenuItem onClick={() => handleThemeChange("light")}>
               <Sun className="mr-2 h-4 w-4" />
               Light
               {theme === "light" && <CheckIcon className="ml-auto h-4 w-4" />}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("dark")}>
+            <DropdownMenuItem onClick={() => handleThemeChange("dark")}>
               <Moon className="mr-2 h-4 w-4" />
               Dark
               {theme === "dark" && <CheckIcon className="ml-auto h-4 w-4" />}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("system")}>
+            <DropdownMenuItem onClick={() => handleThemeChange("system")}>
               <div className="mr-2 flex h-4 w-4 items-center justify-center">
                 <Sun className="h-3 w-3 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-3 w-3 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -80,17 +87,17 @@ export function ThemeToggle() {
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuLabel>Custom Themes</DropdownMenuLabel>
-            <DropdownMenuItem onClick={() => setTheme("blue-pink")}>
+            <DropdownMenuItem onClick={() => handleThemeChange("blue-pink")}>
               <div className="mr-2 h-4 w-4 rounded-full bg-[#3b82f6]" />
               Blue & Pastel Pink
               {theme === "blue-pink" && <CheckIcon className="ml-auto h-4 w-4" />}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("sky-bubblegum")}>
+            <DropdownMenuItem onClick={() => handleThemeChange("sky-bubblegum")}>
               <div className="mr-2 h-4 w-4 rounded-full bg-[#0ea5e9]" />
               Sky Blue & Bubblegum
               {theme === "sky-bubblegum" && <CheckIcon className="ml-auto h-4 w-4" />}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("terracotta-teal")}>
+            <DropdownMenuItem onClick={() => handleThemeChange("terracotta-teal")}>
               <div className="mr-2 h-4 w-4 rounded-full bg-[#c2410c]" />
               Terracotta & Teal
               {theme === "terracotta-teal" && <CheckIcon className="ml-auto h-4 w-4" />}
@@ -120,4 +127,3 @@ function CheckIcon(props: React.ComponentProps<"svg">) {
     </svg>
   )
 }
-
