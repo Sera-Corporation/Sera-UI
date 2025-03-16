@@ -57,14 +57,8 @@ export function ClientComponentWrapper({
             <h3 className="text-lg font-medium">No components found</h3>
             <p className="mt-1 text-sm text-muted-foreground">
               Try adjusting your search or filter to find what you're looking for.
-            </p>
-            <Button
-              variant="outline"
-              className="mt-4"
-              onClick={handleResetFilters}
-            >
-              Reset filters
-            </Button>
+            </p>s
+            
           </div>
         </div>
       )}

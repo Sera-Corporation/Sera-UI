@@ -2,7 +2,8 @@
 
 import * as React from "react"
 import { useRouter, useSearchParams } from "next/navigation"
-import { Search, X, ChevronDown, Layout, FormInput, Eye, MessageSquare, Menu } from "lucide-react"
+import { Search, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
@@ -27,6 +28,7 @@ export function ComponentSidebar({ className }: ComponentSidebarProps) {
   const searchParams = useSearchParams()
   const [searchQuery, setSearchQuery] = React.useState("")
   const [isLoading, setIsLoading] = React.useState(true)
+  const [isCollapsed, setIsCollapsed] = React.useState(false)
   
   const currentCategory = searchParams.get("category") || "all"
   const currentComponentId = searchParams.get("component")
@@ -41,13 +43,13 @@ export function ComponentSidebar({ className }: ComponentSidebarProps) {
     return () => clearTimeout(timer)
   }, [currentCategory, currentComponentId])
 
-  const categories: { value: ComponentCategory; label: string; icon: React.ReactNode }[] = [
-    { value: "all", label: "All", icon: <ChevronDown className="h-4 w-4" /> },
-    { value: "inputs", label: "Inputs", icon: <FormInput className="h-4 w-4" /> },
-    { value: "display", label: "Display", icon: <Eye className="h-4 w-4" /> },
-    { value: "feedback", label: "Feedback", icon: <MessageSquare className="h-4 w-4" /> },
-    { value: "navigation", label: "Navigation", icon: <Menu className="h-4 w-4" /> },
-    { value: "layout", label: "Layout", icon: <Layout className="h-4 w-4" /> },
+  const categories: { value: ComponentCategory; label: string }[] = [
+    { value: "all", label: "All" },
+    { value: "inputs", label: "Inputs" },
+    { value: "display", label: "Display" },
+    { value: "feedback", label: "Feedback" },
+    { value: "navigation", label: "Navigation" },
+    { value: "layout", label: "Layout" },
   ]
 
   const filteredComponents = React.useMemo(() => {
@@ -86,8 +88,38 @@ export function ComponentSidebar({ className }: ComponentSidebarProps) {
     setSearchQuery("")
   }
 
+  const toggleCollapse = () => {
+    setIsCollapsed(!isCollapsed)
+  }
+
+  if (isCollapsed) {
+    return (
+      <motion.div 
+        className="flex flex-col h-full border-r"
+        initial={{ width: 280 }}
+        animate={{ width: 48 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      >
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="m-2" 
+          onClick={toggleCollapse}
+          aria-label="Expand sidebar"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </Button>
+      </motion.div>
+    )
+  }
+
   return (
-    <div className={cn("pb-6", className)}>
+    <motion.div 
+      className={cn("pb-6 relative", className)}
+      initial={{ width: 48 }}
+      animate={{ width: 280 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+    >     
       <div className="space-y-4 py-4">
         <div className="px-3 py-1">
           <div className="relative">
@@ -123,9 +155,8 @@ export function ComponentSidebar({ className }: ComponentSidebarProps) {
                 <TabsTrigger 
                   key={category.value} 
                   value={category.value}
-                  className="flex items-center justify-start gap-1 px-3 py-1.5 text-left"
+                  className="flex items-center justify-center px-3 py-1.5 text-center"
                 >
-                  {category.icon}
                   <span className="text-xs">{category.label}</span>
                 </TabsTrigger>
               ))}
@@ -135,9 +166,8 @@ export function ComponentSidebar({ className }: ComponentSidebarProps) {
                 <TabsTrigger 
                   key={category.value} 
                   value={category.value}
-                  className="flex items-center justify-start gap-1 px-3 py-1.5 text-left"
+                  className="flex items-center justify-center px-3 py-1.5 text-center"
                 >
-                  {category.icon}
                   <span className="text-xs">{category.label}</span>
                 </TabsTrigger>
               ))}
@@ -152,44 +182,54 @@ export function ComponentSidebar({ className }: ComponentSidebarProps) {
               ({filteredComponents.length})
             </span>
           </h2>
-          <ScrollArea className="h-[calc(100vh-220px)]">
-            <div className="space-y-1 pr-2">
-              {isLoading ? (
-                Array(8).fill(0).map((_, i) => (
-                  <div key={i} className="p-1">
-                    <Skeleton className="h-8 w-full rounded" />
-                  </div>
-                ))
-              ) : filteredComponents.length === 0 ? (
-                <p className="px-4 py-2 text-sm text-muted-foreground">
-                  No components found. Try adjusting your search or category.
-                </p>
-              ) : (
-                filteredComponents.map((component) => (
-                  <Button
-                    key={component.id}
-                    variant={currentComponentId === component.id ? "secondary" : "ghost"}
-                    size="sm"
-                    className="w-full justify-start font-normal"
-                    onClick={() => router.push(`/components?${createQueryString("component", component.id)}`)}
-                  >
-                    <div className="flex items-center w-full">
-                      <span className="overflow-hidden text-ellipsis whitespace-nowrap mr-2">
-                        {component.name}
-                      </span>
-                      {component.isNew && (
-                        <Badge variant="outline" className="shrink-0 ml-auto">
-                          New
-                        </Badge>
-                      )}
-                    </div>
-                  </Button>
-                ))
-              )}
-            </div>
-          </ScrollArea>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentCategory}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+            >
+              <ScrollArea className="h-[calc(100vh-220px)]">
+                <div className="space-y-1 pr-2">
+                  {isLoading ? (
+                    Array(8).fill(0).map((_, i) => (
+                      <div key={i} className="p-1">
+                        <Skeleton className="h-8 w-full rounded" />
+                      </div>
+                    ))
+                  ) : filteredComponents.length === 0 ? (
+                    <p className="px-4 py-2 text-sm text-muted-foreground">
+                      No components found. Try adjusting your search or category.
+                    </p>
+                  ) : (
+                    filteredComponents.map((component) => (
+                      <Button
+                        key={component.id}
+                        variant={currentComponentId === component.id ? "secondary" : "ghost"}
+                        size="sm"
+                        className="w-full justify-start font-normal"
+                        onClick={() => router.push(`/components?${createQueryString("component", component.id)}`)}
+                      >
+                        <div className="flex items-center w-full">
+                          <span className="overflow-hidden text-ellipsis whitespace-nowrap mr-2">
+                            {component.name}
+                          </span>
+                          {component.isNew && (
+                            <Badge variant="outline" className="shrink-0 ml-auto">
+                              New
+                            </Badge>
+                          )}
+                        </div>
+                      </Button>
+                    ))
+                  )}
+                </div>
+              </ScrollArea>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
