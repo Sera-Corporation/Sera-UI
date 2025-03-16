@@ -9,10 +9,18 @@ export const metadata = {
   description: "Browse and explore the SeraUI component library.",
 };
 
-export default function ComponentsPage({ searchParams }: { searchParams?: Record<string, string> }) {
-  const category = searchParams?.category || "all";
-  const search = searchParams?.search || "";
-  const selectedComponentId = searchParams?.component || "";
+// Create a helper function to extract the parameters
+async function getSearchParameters(params?: Record<string, string>) {
+  return {
+    category: params?.category || "all",
+    search: params?.search || "",
+    componentId: params?.component || ""
+  };
+}
+
+export default async function ComponentsPage({ searchParams }: { searchParams?: Record<string, string> }) {
+  // Await the search parameters
+  const { category, search, componentId } = await getSearchParameters(searchParams);
 
   return (
     <Suspense fallback={
@@ -25,7 +33,7 @@ export default function ComponentsPage({ searchParams }: { searchParams?: Record
       <ComponentsPageContent 
         initialCategory={category} 
         initialSearch={search} 
-        initialComponentId={selectedComponentId} 
+        initialComponentId={componentId} 
       />
     </Suspense>
   );

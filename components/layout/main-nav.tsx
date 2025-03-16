@@ -2,13 +2,13 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu } from "lucide-react"
-import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import  Logo  from "../../public/images/Seralogo1.png"
+import Logo  from "@/public/images/Seralogo1.png"
+import Image from "next/image"
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -24,7 +24,7 @@ export function MainNav() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Image src={Logo} alt="Sera Logo" width={70} height={70} />
+      <Image src={Logo} alt="Logo" width={70} height={100} />
 
         <div className="hidden md:flex md:items-center md:space-x-6">
           {navItems.map((item) => (

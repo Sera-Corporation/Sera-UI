@@ -1,10 +1,9 @@
 import Link from "next/link"
 import { Twitter, Mail, Heart, Star, ExternalLink, BookOpen, Code, Package } from "lucide-react"
-import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
-import  Logo  from "../../public/images/Seralogo1.png"
+import { Logo } from "@/components/ui/logo"
 
 export function Footer() {
   return (
@@ -13,7 +12,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <Image src={Logo} alt="Sera Logo" width={70} height={70} />
+              <Logo className="mb-2" />
               <p className="text-sm text-muted-foreground">
                 A beautifully designed component library that helps developers build clean, accessible, and customizable
                 interfaces with just Tailwind CSS.
@@ -21,7 +20,7 @@ export function Footer() {
             </div>
             <div className="flex space-x-4">
               <Link
-                href="https://github.com/Sera-Corporation/Sera-UI.git"
+                href="https://github.com/yourusername/seraui"
                 target="_blank"
                 rel="noreferrer"
                 className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "h-8 w-8")}
@@ -87,7 +86,15 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="https://github.com/bigyanadk07"
+                  href="/contribute"
+                  className="text-muted-foreground hover:text-foreground flex items-center gap-1"
+                >
+                  <Code className="h-3 w-3" /> Contribute
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://github.com/yourusername/seraui/discussions"
                   target="_blank"
                   rel="noreferrer"
                   className="text-muted-foreground hover:text-foreground flex items-center gap-1"
@@ -97,7 +104,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://discord.gg/BNa2V7YQ"
+                  href="https://discord.gg/seraui"
                   target="_blank"
                   rel="noreferrer"
                   className="text-muted-foreground hover:text-foreground flex items-center gap-1"
@@ -133,13 +140,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/customer-portal" className="text-muted-foreground hover:text-foreground flex items-center gap-1">
-                  <ExternalLink className="h-3 w-3" /> Customer Portal
-                </Link>
-              </li>
-              <li>
                 <Link
-                  href="https://github.com/Sera-Corporation/Sera-UI.git/blob/main/LICENSE"
+                  href="https://github.com/yourusername/seraui/blob/main/LICENSE"
                   target="_blank"
                   rel="noreferrer"
                   className="text-muted-foreground hover:text-foreground flex items-center gap-1"
@@ -155,12 +157,30 @@ export function Footer() {
         <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             Built with <Heart className="inline-block h-4 w-4 text-red-500" /> by{" "}
-            <a href="https://github.com/bigyanadk07" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4">
-              Bigyan Adhikari
+            <a href="#" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4">
+              Your Name
             </a>
-            
+            . The source code is available on{" "}
+            <a
+              href="https://github.com/yourusername/seraui"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium underline underline-offset-4"
+            >
+              GitHub
+            </a>
+            .
           </p>
           <div className="flex items-center">
+            <Link
+              href="https://github.com/yourusername/seraui"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1 text-sm font-medium"
+            >
+              <Star className="h-4 w-4" />
+              <span>Star on GitHub</span>
+            </Link>
           </div>
         </div>
       </div>
