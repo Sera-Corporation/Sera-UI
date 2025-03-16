@@ -17,5 +17,10 @@ next-env.d.ts
 # These are runtime/temporary files that shouldn't be tracked
 .vercel
 
-# .gitignore
-.next/cache/
+# Next.js build output
+/.next/
+/out/
+
+# Misc
+.DS_Store
+*.pem
