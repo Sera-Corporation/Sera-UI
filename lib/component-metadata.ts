@@ -163,6 +163,16 @@ export const componentMetadata: ComponentMeta[] = [
     isNew: true,
     version: "1.4",
   },
+  {
+    id: "authbuttons",
+    name: "Auth Button",
+    description: "Authentication Buttons with hover effect.",
+    icon: "Square",
+    href: "/components/authbuttons",
+    category: "navigation",
+    isNew: true,
+    version: "1.4",
+  },
 ]
 
 export function getComponentsByCategory(category: ComponentCategory): ComponentMeta[] {
