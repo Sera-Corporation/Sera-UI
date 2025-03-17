@@ -143,6 +143,16 @@ export const componentMetadata: ComponentMeta[] = [
     isNew: true,
     version: "1.1",
   },
+  {
+    id: "animated-button", 
+    name: "Animated Button",
+    description: "Button with animated circle reveal effect on hover",
+    icon: "MousePointer",
+    href: "/components/animated-button",
+    category: "inputs",
+    isNew: true,
+    version: "1.4",
+  }
 ]
 
 export function getComponentsByCategory(category: ComponentCategory): ComponentMeta[] {

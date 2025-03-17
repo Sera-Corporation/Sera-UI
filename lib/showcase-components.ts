@@ -15,6 +15,7 @@ import { TabsShowcase } from "@/components/showcases/tabs-showcase"
 import { NotificationsShowcase } from "@/components/showcases/notifications-showcase"
 import { FloatingActionShowcase } from "@/components/showcases/floating-action-showcase"
 import { MyNewComponentShowcase } from "@/components/showcases/my-new-component-showcase"
+import { AnimatedButtonShowcase } from "@/components/showcases/animated-button-showcase"
 
 // Import the card preview components
 import { ButtonCardPreview } from "@/components/card-previews/button-card-preview"
@@ -32,7 +33,7 @@ import { ProgressCardPreview } from "@/components/card-previews/progress-card-pr
 import { TabsCardPreview } from "@/components/card-previews/tabs-card-preview"
 import { NotificationsCardPreview } from "@/components/card-previews/notifications-card-preview"
 import { FloatingActionCardPreview } from "@/components/card-previews/floating-action-card-preview"
-
+import { AnimatedButtonCardPreview } from "@/components/card-previews/animated-button-card-preview"
 // Full showcases for detailed component view
 export const showcaseComponents: Record<string, React.ComponentType> = {
   buttons: ButtonShowcase,
@@ -51,6 +52,7 @@ export const showcaseComponents: Record<string, React.ComponentType> = {
   notifications: NotificationsShowcase,
   "floating-action": FloatingActionShowcase,
   "my-new-component": MyNewComponentShowcase,
+  "animated-button": AnimatedButtonShowcase,
 }
 
 // Simplified previews for component cards
@@ -70,5 +72,6 @@ export const cardPreviewComponents: Record<string, React.ComponentType> = {
   tabs: TabsCardPreview,
   notifications: NotificationsCardPreview,
   "floating-action": FloatingActionCardPreview,
+  "animated-button": AnimatedButtonCardPreview,
 }
 

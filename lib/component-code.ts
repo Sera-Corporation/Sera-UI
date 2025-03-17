@@ -52,6 +52,40 @@ export function CardExample() {
     </div>
   )
 }`,
+"animated-button": `import * as React from "react"
+import { useState } from "react"
+
+export function AnimatedButton({ children }: { children: React.ReactNode }) {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <div 
+      className={\`cursor-pointer bg-[#e4c590] font-serif text-black w-48 h-12 tracking-wider text-center leading-[3rem] relative overflow-hidden z-10 transition-all duration-500 \${isHovered ? 'text-white border border-[#e4c590]' : ''}\`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {children}
+      {[0, 1, 2, 3].map((index) => (
+        <span 
+          key={index}
+          style={{
+            position: 'absolute',
+            width: '25%',
+            height: '100%',
+            backgroundColor: 'black',
+            borderRadius: '50%',
+            left: \`\${index * 25}%\`,
+            transform: isHovered ? 'translateY(0) scale(150%)' : 'translateY(150%)',
+            transition: 'transform 0.5s',
+            transitionDelay: \`\${index * 100}ms\`,
+            zIndex: -1,
+          }}
+        />
+      ))}
+    </div>
+  )
+}`,
+
     // ... other component code examples
   }
 
@@ -439,6 +473,7 @@ export function getTailwindCode(componentId: string): string {
   </button>
 </div>`,
 
+
     accordions: `{/* Basic Accordion (requires JavaScript for functionality) */}
 <div className="w-full">
   {/* Accordion Item 1 */}
@@ -552,6 +587,40 @@ modals: `{/* Modal Trigger Button */}
     </button>
   </div>
 </div>`,
+"animated-button": `<!-- Animated Button with Circle Reveal Effect -->
+<!-- Note: This requires JavaScript for the hover state -->
+<div 
+  class="cursor-pointer bg-[#e4c590] font-serif text-black w-48 h-12 tracking-wider text-center leading-[3rem] relative overflow-hidden z-10 transition-all duration-500"
+  id="animated-button"
+>
+  Order Now
+  <!-- These spans will be animated with JavaScript -->
+  <span class="absolute w-1/4 h-full bg-black rounded-full left-0 translate-y-[150%] transition-transform duration-500" style="z-index: -1;"></span>
+  <span class="absolute w-1/4 h-full bg-black rounded-full left-1/4 translate-y-[150%] transition-transform duration-500" style="z-index: -1; transition-delay: 100ms;"></span>
+  <span class="absolute w-1/4 h-full bg-black rounded-full left-2/4 translate-y-[150%] transition-transform duration-500" style="z-index: -1; transition-delay: 200ms;"></span>
+  <span class="absolute w-1/4 h-full bg-black rounded-full left-3/4 translate-y-[150%] transition-transform duration-500" style="z-index: -1; transition-delay: 300ms;"></span>
+</div>
+
+<script>
+  // JavaScript to handle the hover effect
+  const button = document.getElementById('animated-button');
+  const circles = button.querySelectorAll('span');
+  
+  button.addEventListener('mouseenter', () => {
+    button.classList.add('text-white', 'border', 'border-[#e4c590]');
+    circles.forEach(circle => {
+      circle.style.transform = 'translateY(0) scale(150%)';
+    });
+  });
+  
+  button.addEventListener('mouseleave', () => {
+    button.classList.remove('text-white', 'border', 'border-[#e4c590]');
+    circles.forEach(circle => {
+      circle.style.transform = 'translateY(150%)';
+    });
+  });
+</script>`,
+
   }
 
   return tailwindExamples[componentId] || `{/* Tailwind CSS code coming soon for ${componentId} */}`
