@@ -152,7 +152,17 @@ export const componentMetadata: ComponentMeta[] = [
     category: "inputs",
     isNew: true,
     version: "1.4",
-  }
+  },
+  {
+    id: "squarecard",
+    name: "Square Card",
+    description: "A square card with logo, title, and supporter count",
+    icon: "Square",
+    href: "/components/squarecard",
+    category: "display",
+    isNew: true,
+    version: "1.4",
+  },
 ]
 
 export function getComponentsByCategory(category: ComponentCategory): ComponentMeta[] {

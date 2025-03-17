@@ -34,6 +34,12 @@ import { TabsCardPreview } from "@/components/card-previews/tabs-card-preview"
 import { NotificationsCardPreview } from "@/components/card-previews/notifications-card-preview"
 import { FloatingActionCardPreview } from "@/components/card-previews/floating-action-card-preview"
 import { AnimatedButtonCardPreview } from "@/components/card-previews/animated-button-card-preview"
+
+// Add imports for the Square Card component
+import { SquareCardCardPreview } from "@/components/card-previews/squarecard-card-preview"
+import { SquareCardShowcase } from "@/components/showcases/squarecard-showcase"
+
+
 // Full showcases for detailed component view
 export const showcaseComponents: Record<string, React.ComponentType> = {
   buttons: ButtonShowcase,
@@ -53,6 +59,7 @@ export const showcaseComponents: Record<string, React.ComponentType> = {
   "floating-action": FloatingActionShowcase,
   "my-new-component": MyNewComponentShowcase,
   "animated-button": AnimatedButtonShowcase,
+  squarecard: SquareCardShowcase,
 }
 
 // Simplified previews for component cards
@@ -73,5 +80,6 @@ export const cardPreviewComponents: Record<string, React.ComponentType> = {
   notifications: NotificationsCardPreview,
   "floating-action": FloatingActionCardPreview,
   "animated-button": AnimatedButtonCardPreview,
+  squarecard: SquareCardCardPreview,
 }
 
