@@ -176,7 +176,7 @@ export const componentMetadata: ComponentMeta[] = [
   {
     id: "eBookCard",
     name: "Icon Card",
-    description: "Authentication Buttons with hover effect.",
+    description: "Icon Card with title and description",
     icon: "Square",
     href: "/components/ebookcard",
     category: "layout",
