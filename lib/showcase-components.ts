@@ -43,6 +43,10 @@ import { SquareCardShowcase } from "@/components/showcases/squarecard-showcase"
 import AuthButtonCardPreview from "@/components/card-previews/authbuttons-card-preview"
 import AuthButtonShowcase from "@/components/showcases/authbuttons-showcase"
 
+// Add imports for the eBook Card component
+import eBookCardCardPreview from "@/components/card-previews/ebookcard-card-preview"
+import eBookCardShowcase from "@/components/showcases/ebookcard-showcase"
+
 
 // Full showcases for detailed component view
 export const showcaseComponents: Record<string, React.ComponentType> = {
@@ -65,6 +69,7 @@ export const showcaseComponents: Record<string, React.ComponentType> = {
   "animated-button": AnimatedButtonShowcase,
   squarecard: SquareCardShowcase,
   authbuttons: AuthButtonShowcase,
+  eBookCard:eBookCardShowcase,
 }
 
 // Simplified previews for component cards
@@ -86,6 +91,7 @@ export const cardPreviewComponents: Record<string, React.ComponentType> = {
   "floating-action": FloatingActionCardPreview,
   "animated-button": AnimatedButtonCardPreview,
   squarecard: SquareCardCardPreview,
-  authbuttons: AuthButtonCardPreview
+  authbuttons: AuthButtonCardPreview,
+  eBookCard: eBookCardCardPreview,
 }
 

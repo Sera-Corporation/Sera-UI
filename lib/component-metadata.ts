@@ -173,6 +173,16 @@ export const componentMetadata: ComponentMeta[] = [
     isNew: true,
     version: "1.4",
   },
+  {
+    id: "eBookCard",
+    name: "Icon Card",
+    description: "Authentication Buttons with hover effect.",
+    icon: "Square",
+    href: "/components/ebookcard",
+    category: "layout",
+    isNew: true,
+    version: "1.4",
+  },
 ]
 
 export function getComponentsByCategory(category: ComponentCategory): ComponentMeta[] {
