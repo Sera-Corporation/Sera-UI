@@ -13,9 +13,8 @@ import Image from "next/image"
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/components", label: "Components" },
-  { href: "/docs", label: "Documentation" },
-  { href: "/releases/v1.4", label: "Release Notes" },
-  { href: "/contribute", label: "Contribute" },
+  { href: "/section", label: "Sections" },
+  { href: "/icons", label: "Icons" },
 ]
 
 export function MainNav() {
@@ -24,7 +23,11 @@ export function MainNav() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
+      <Link 
+      href="/">
       <Image src={Logo} alt="Logo" width={70} height={100} />
+      </Link>
+
 
         <div className="hidden md:flex md:items-center md:space-x-6">
           {navItems.map((item) => (

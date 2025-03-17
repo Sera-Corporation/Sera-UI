@@ -73,6 +73,14 @@ export function Footer() {
                   <Star className="h-3 w-3" /> Release Notes
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contribute"
+                  className="text-muted-foreground hover:text-foreground flex items-center gap-1"
+                >
+                  <Star className="h-3 w-3" /> Contribute
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
