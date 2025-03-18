@@ -183,6 +183,16 @@ export const componentMetadata: ComponentMeta[] = [
     isNew: true,
     version: "1.4",
   },
+  {
+    id: "sofaCard",
+    name: "Ecommerce Card",
+    description: "Card with Image and description",
+    icon: "Square",
+    href: "/components/sofaCard",
+    category: "layout",
+    isNew: true,
+    version: "1.4",
+  },
 ]
 
 export function getComponentsByCategory(category: ComponentCategory): ComponentMeta[] {

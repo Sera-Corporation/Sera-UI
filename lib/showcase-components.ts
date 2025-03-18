@@ -47,6 +47,9 @@ import AuthButtonShowcase from "@/components/showcases/authbuttons-showcase"
 import eBookCardCardPreview from "@/components/card-previews/ebookcard-card-preview"
 import eBookCardShowcase from "@/components/showcases/ebookcard-showcase"
 
+// Add imports for the sofa Card component
+import sofaCardCardPreview from "@/components/card-previews/sofacard-card-preview"
+import sofaCardShowcase from "@/components/showcases/sofacard-showcase"
 
 // Full showcases for detailed component view
 export const showcaseComponents: Record<string, React.ComponentType> = {
@@ -70,6 +73,7 @@ export const showcaseComponents: Record<string, React.ComponentType> = {
   squarecard: SquareCardShowcase,
   authbuttons: AuthButtonShowcase,
   eBookCard:eBookCardShowcase,
+  sofaCard: sofaCardShowcase
 }
 
 // Simplified previews for component cards
@@ -93,5 +97,6 @@ export const cardPreviewComponents: Record<string, React.ComponentType> = {
   squarecard: SquareCardCardPreview,
   authbuttons: AuthButtonCardPreview,
   eBookCard: eBookCardCardPreview,
+  sofaCard: sofaCardCardPreview
 }
 
