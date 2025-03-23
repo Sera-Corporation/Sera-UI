@@ -1,0 +1,15 @@
+export type LayoutCategory =
+  | "navbar"
+  | "hero"
+  | "footer"
+  | "grid"
+  | "form"
+  | "pricing"
+  | "testimonial"
+  | "feature"
+  | "cta"
+  | "stats"
+  | "gallery"
+  | "faq"
+  | "all"
+
