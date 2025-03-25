@@ -13,8 +13,6 @@ import Image from "next/image"
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/components", label: "Components" },
-  { href: "/section", label: "Sections" },
-  { href: "/icons", label: "Icons" },
 ]
 
 export function MainNav() {
